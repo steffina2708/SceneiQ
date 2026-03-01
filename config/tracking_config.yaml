@@ -1,0 +1,22 @@
+# config/tracking_config.yaml
+# Multi-object tracking and motion analysis settings
+
+tracking:
+  persist: true               # Maintain track IDs across frames
+  min_scene_appearances: 2    # Minimum frames a track_id must appear to be stable
+  min_scene_count: 3          # Minimum scenes a track_id must appear in to be "main character"
+  motion_action_threshold: 1.2  # Average track speed (norm coords / s) → "action" scene type
+
+movement_labels:
+  person_run_speed: 1.8       # Normalised speed threshold: walking → running
+  person_walk_speed: 0.6      # Normalised speed threshold: static → walking
+  vehicle_speed: 1.5          # Normalised speed threshold: parked → moving
+  ball_fast_speed: 2.0        # Normalised speed threshold: slow → fast ball
+
+frame_sampler:
+  max_frames: 180             # Hard frame cap — keeps CPU time bounded
+  high_motion_hz: 2.0         # Sampling rate (fps) during high-motion segments
+  normal_motion_hz: 1.0       # Sampling rate during normal motion
+  static_hz: 0.5              # Sampling rate during static scenes
+  high_motion_threshold: 15.0 # Inter-frame pixel diff mean → high motion
+  low_motion_threshold: 5.0   # Inter-frame pixel diff mean → low motion

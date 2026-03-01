@@ -1,0 +1,23 @@
+# config/segmentation_config.yaml
+# Scene segmentation settings via PySceneDetect ContentDetector
+
+scene_detection:
+  # ContentDetector threshold (HSV-weighted colour difference)
+  # Lower = more sensitive (more scene cuts detected)
+  threshold_high_motion: 20.0   # Used when mean inter-frame motion > 15.0
+  threshold_default: 27.0       # Used for normal / static content
+
+  # Motion magnitude that selects the high-motion threshold
+  high_motion_cutoff: 15.0
+
+  # Retained for call-site compatibility in segment_scenes() — not used by PSD
+  histogram_threshold: 0.45
+  min_scene_duration: 3.0       # Minimum scene length in seconds
+
+retrieval:
+  score_threshold: 0.06         # Minimum relevance score to include in results
+  transcript_weight: 0.40
+  dominant_object_weight: 0.20
+  supporting_object_weight: 0.10
+  main_character_weight: 0.20
+  importance_weight: 0.10

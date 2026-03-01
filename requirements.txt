@@ -1,0 +1,11 @@
+ultralytics
+opencv-python
+numpy
+flask
+yt-dlp
+scenedetect
+youtube-transcript-api
+tqdm
+
+# ── Scene Detection ────────────────────────────────────────────────────────────
+scenedetect[opencv]>=0.6.1    # PySceneDetect ContentDetector (HSV structural scenes)

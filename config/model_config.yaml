@@ -1,0 +1,10 @@
+# config/model_config.yaml
+# YOLOv8 object detection settings
+# Model weights are auto-downloaded by Ultralytics on first run.
+
+model:
+  name: yolov8s           # yolov8n (fastest) | yolov8s | yolov8m | yolov8l | yolov8x
+  confidence_threshold: 0.35
+  batch_size: 4
+  max_dimension: 640      # longer edge resize (pixels) before inference
+  min_box_area: 0.015     # minimum bounding box area as fraction of frame area
